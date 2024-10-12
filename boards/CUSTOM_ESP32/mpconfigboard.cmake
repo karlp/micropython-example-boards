@@ -6,6 +6,8 @@ set(SDKCONFIG_DEFAULTS
     ${MICROPY_PORT_DIR}/boards/sdkconfig.base
     ${MICROPY_PORT_DIR}/boards/sdkconfig.ble
 )
+include($ENV{IDF_PATH}/tools/cmake/version.cmake)
+set(IDF_VERSION "${IDF_VERSION_MAJOR}.${IDF_VERSION_MINOR}.${IDF_VERSION_PATCH}")
 
 # Set the user C modules to include in the build.
 set(USER_C_MODULES
