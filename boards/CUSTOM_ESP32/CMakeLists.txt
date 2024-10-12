@@ -25,6 +25,9 @@ endforeach()
 configure_file(${CMAKE_BINARY_DIR}/sdkconfig.combined.in ${CMAKE_BINARY_DIR}/sdkconfig.combined COPYONLY)
 set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined)
 
+# Use the default linker fragments unless you need otherwise
+set(MICROPY_USER_LDFRAGMENTS ${MICROPY_PORT_DIR}/main_${IDF_TARGET}/linker.lf)
+
 # Include main IDF cmake file and define the project.
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(micropython)
